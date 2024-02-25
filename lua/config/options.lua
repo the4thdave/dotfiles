@@ -1,0 +1,8 @@
+vim.cmd("set shiftwidth=2")
+vim.cmd("set tabstop=2")
+vim.cmd("set softtabstop=2")
+vim.cmd("set incsearch")
+vim.cmd("set hlsearch")
+vim.cmd("set number")
+vim.cmd("set splitright")
+vim.cmd("nnoremap <S-Tab> <C-w>w")
