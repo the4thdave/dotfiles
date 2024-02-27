@@ -4,7 +4,7 @@ return {
 	config = function ()
 		require'nvim-treesitter.configs'.setup {
 			-- A list of parser names, or "all" (the five listed parsers should always be installed)
-			ensure_installed = { "lua", "vim", "java" },
+			ensure_installed = { "lua", "vim", "java", "vimdoc" },
 
 			highlight = {
 				enable = true,
