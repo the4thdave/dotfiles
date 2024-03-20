@@ -3,8 +3,8 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function ()
 			local lspconfig = require('lspconfig')
-			lspconfig.pyright.setup {}
-			lspconfig.lua_ls.setup {
+			lspconfig.pyright.setup{}
+			lspconfig.lua_ls.setup{
 				settings = {
 					Lua = {
 						diagnostics = {
@@ -17,6 +17,9 @@ return {
 					},
 				},
 			}
+			require'lspconfig'.bashls.setup{}
+			require'lspconfig'.dockerls.setup{}
+			require'lspconfig'.yamlls.setup{}
 		end
 	},
 	'mfussenegger/nvim-jdtls'
