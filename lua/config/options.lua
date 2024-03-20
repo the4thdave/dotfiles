@@ -7,7 +7,10 @@ vim.cmd("set number")
 vim.cmd("set splitright")
 vim.cmd("nnoremap <S-Tab> <C-w>w")
 vim.cmd("set colorcolumn=120")
+
+-- vim-commentary
 vim.cmd("filetype plugin indent on")
+
 vim.cmd[[
 augroup highlight_yank
 autocmd!

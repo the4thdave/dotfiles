@@ -22,39 +22,8 @@ require("lazy").setup("plugins")
 require("config.options")
 require("config.keymaps")
 
--- Mason
-require("mason").setup()
-require("mason-lspconfig").setup {
-	-- Whether servers that are set up (via lspconfig) should be automatically installed if they're not already installed.
-	-- This setting has no relation with the `ensure_installed` setting.
-	-- Can either be:
-	--   - false: Servers are not automatically installed.
-	--   - true: All servers set up via lspconfig are automatically installed.
-	--   - { exclude: string[] }: All servers set up via lspconfig, except the ones provided in the list, are automatically installed.
-	--       Example: automatic_installation = { exclude = { "rust_analyzer", "solargraph" } }
-	---@type boolean
-	automatic_installation = true,
-}
-require("mason-lspconfig").setup_handlers {
-	-- The first entry (without a key) will be the default handler
-	-- and will be called for each installed server that doesn't have
-	-- a dedicated handler.
-	function (server_name) -- default handler (optional)
-		require("lspconfig")[server_name].setup {}
-	end,
-	["jdtls"] = function()
-		require("lspconfig").jdtls.setup {
-			cmd = {
-				"jdtls",
-				"--jvm-arg=" .. string.format("-javaagent:%s", vim.fn.expand "$MASON/share/jdtls/lombok.jar"),
-			},
-		}
-	end,
-}
-
--- Lspconfig
--- Use LspAttach autocommand to only map the following keys
--- after the language server attaches to the current buffer
+-- Lspconfig Mappings
+-- Use LspAttach autocommand to only map the following keys after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = vim.api.nvim_create_augroup('UserLspConfig', {}),
 	callback = function(ev)
