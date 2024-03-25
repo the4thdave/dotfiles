@@ -5,7 +5,6 @@ vim.cmd("set incsearch")
 vim.cmd("set hlsearch")
 vim.cmd("set number")
 vim.cmd("set splitright")
-vim.cmd("nnoremap <S-Tab> <C-w>w")
 vim.cmd("set colorcolumn=120")
 
 -- vim-commentary
