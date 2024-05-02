@@ -1,9 +1,9 @@
 -- Tree
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', {})
+vim.keymap.set('n', '<leader>e', ':NvimTreeFindFile<CR>', {})
 
 -- Telescope
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>p', builtin.git_files, {})
+vim.keymap.set('n', '<leader>p', builtin.find_files, {})
 vim.keymap.set('n', '<leader>g', builtin.live_grep, {})
 
 -- Diffview
