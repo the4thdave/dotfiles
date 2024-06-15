@@ -1,0 +1,31 @@
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+set hlsearch
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+" File explorer
+Plug 'preservim/nerdtree'
+
+let mapleader = " "
+
+map <leader>e :NERDTreeToggle<CR>
+
+map <leader>p <Action>(SearchEverywhere)
+
+map <leader>g <Action>(FindInPath)
+
+map <leader>r <Action>(ReplaceInPath)
+
+sethandler <C-w> a:vim
+sethandler <C-j> a:vim
+sethandler <C-k> a:vim
+sethandler <C-l> a:vim
+sethandler <C-o> a:vim
+sethandler <C-i> a:vim
