@@ -14,7 +14,6 @@ vim.cmd("set incsearch")
 vim.cmd("set hlsearch")
 vim.cmd("set number")
 vim.cmd("set splitright")
-vim.cmd("set colorcolumn=120")
 
 -- vim-commentary
 vim.cmd("filetype plugin indent on")
