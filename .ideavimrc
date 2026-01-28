@@ -39,4 +39,3 @@ nmap <C-o> <Action>(Back)
 nmap <C-i> <Action>(Forward)
 nmap [[ <Action>(MethodUp)
 nmap ]] <Action>(MethodDown)
-
