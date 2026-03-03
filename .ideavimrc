@@ -15,17 +15,27 @@ Plug 'preservim/nerdtree'
 
 let mapleader = " "
 
-map <leader>e :NERDTreeToggle<CR>
-
 map <leader>p <Action>(SearchEverywhere)
-
-map <leader>g <Action>(FindInPath)
-
+map <leader>f <Action>(FindInPath)
 map <leader>r <Action>(ReplaceInPath)
+map <leader>l <Action>(ReformatCode)
+map <leader>c <Action>(GenerateConstructor)
 
+" Override IDE shortcuts
 sethandler <C-w> a:vim
 sethandler <C-j> a:vim
 sethandler <C-k> a:vim
 sethandler <C-l> a:vim
 sethandler <C-o> a:vim
 sethandler <C-i> a:vim
+
+" Go to code
+nmap gd <Action>(GotoDeclaration)
+nmap gy <Action>(GotoTypeDeclaration)
+nmap gi <Action>(GotoImplementation)
+
+"Navigation
+nmap <C-o> <Action>(Back)
+nmap <C-i> <Action>(Forward)
+nmap [[ <Action>(MethodUp)
+nmap ]] <Action>(MethodDown)
